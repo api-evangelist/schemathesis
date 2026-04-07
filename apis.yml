@@ -5,8 +5,8 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Testing
   - Contract Testing
+  - Testing
 url: >-
   https://raw.githubusercontent.com/api-evangelist/schemathesis/refs/heads/main/apis.yml
 created: '2026-03-25'
@@ -19,8 +19,8 @@ apis:
       Schemathesis is a property-based API testing tool that automatically generates test cases from OpenAPI and GraphQL schemas to find bugs and spec violations.
     humanURL: https://schemathesis.io
     tags:
-      - Testing
       - Contract Testing
+      - Testing
     properties:
       - type: Documentation
         url: https://schemathesis.readthedocs.io
