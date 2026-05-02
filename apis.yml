@@ -55,6 +55,15 @@ apis:
         url: https://github.com/schemathesis/action
       - type: Changelog
         url: https://github.com/schemathesis/schemathesis/releases
+      - type: JSONSchema
+        url: >-
+          https://raw.githubusercontent.com/api-evangelist/schemathesis/refs/heads/main/json-schema/schemathesis-config-schema.json
+      - type: JSONStructure
+        url: >-
+          https://raw.githubusercontent.com/api-evangelist/schemathesis/refs/heads/main/json-structure/schemathesis-config-structure.json
+      - type: JSONLd
+        url: >-
+          https://raw.githubusercontent.com/api-evangelist/schemathesis/refs/heads/main/json-ld/schemathesis-context.jsonld
 common:
   - type: Website
     url: https://schemathesis.io
@@ -70,6 +79,12 @@ common:
     url: https://schemathesis.io/blog
   - type: Research
     url: https://dl.acm.org/doi/10.1145/3510003.3510097
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/schemathesis/refs/heads/main/vocabulary/schemathesis-vocabulary.yml
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/schemathesis/refs/heads/main/examples/schemathesis-cli-test-example.json
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

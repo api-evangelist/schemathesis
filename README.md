@@ -9,10 +9,14 @@ Used by Netflix, SAP, Red Hat, IBM, and JetBrains.
 ## Resources
 
 - [Documentation](https://schemathesis.readthedocs.io)
+- [Getting Started](https://schemathesis.readthedocs.io/en/stable/getting-started.html)
 - [GitHub Repository](https://github.com/schemathesis/schemathesis)
 - [PyPI Package](https://pypi.org/project/schemathesis/)
 - [Docker Image](https://hub.docker.com/r/schemathesis/schemathesis)
 - [GitHub Action](https://github.com/schemathesis/action)
+- [Changelog](https://github.com/schemathesis/schemathesis/releases)
+- [Blog](https://schemathesis.io/blog)
+- [Research Paper (ACM)](https://dl.acm.org/doi/10.1145/3510003.3510097)
 
 ## Features
 
