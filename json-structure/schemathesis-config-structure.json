@@ -1,0 +1,45 @@
+{
+  "title": "Schemathesis Configuration Structure",
+  "description": "Document structure for a .schemathesis.yml configuration file.",
+  "type": "object",
+  "structure": {
+    "schema": "Path or URL to OpenAPI/GraphQL schema file",
+    "url": "API base URL to test against",
+    "workers": "Number of concurrent workers (default: 1)",
+    "max_response_time": "Max allowed response time in ms",
+    "checks": ["not_a_server_error", "status_code_conformance", "response_schema_conformance"],
+    "auth": {
+      "type": "bearer | basic | apikey | oauth2",
+      "token": "Token value",
+      "username": "For basic auth",
+      "password": "For basic auth",
+      "header": "Header name for API key"
+    },
+    "headers": {
+      "X-Custom-Header": "header-value"
+    },
+    "endpoint": "Path filter pattern or array",
+    "method": "HTTP method filter",
+    "tag": "OpenAPI tag filter",
+    "hypothesis_max_examples": "Number of test cases per operation (default: 100)",
+    "stateful": "none | links (follow OpenAPI Links for stateful testing)",
+    "output_sanitize": "Sanitize secrets in output (default: true)",
+    "junit_xml": "Path for JUnit XML report output"
+  },
+  "test_checks": {
+    "not_a_server_error": "Response status code must not be 5xx",
+    "status_code_conformance": "Response status must be in schema-declared codes",
+    "response_schema_conformance": "Response body must match schema for the status code",
+    "content_type_conformance": "Content-Type header must match schema declaration",
+    "response_headers_conformance": "Response headers must match schema declaration"
+  },
+  "supported_specs": {
+    "OpenAPI": ["2.0 (Swagger)", "3.0.x", "3.1.x"],
+    "GraphQL": ["SDL schemas", "Introspection endpoints"]
+  },
+  "ci_integrations": {
+    "github_actions": "schemathesis/action@v2",
+    "gitlab_ci": "Docker image in CI pipeline",
+    "pytest": "pytest-schemathesis plugin"
+  }
+}

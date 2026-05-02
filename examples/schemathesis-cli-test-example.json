@@ -1,0 +1,51 @@
+{
+  "title": "Schemathesis CLI Test Run",
+  "description": "Example of running Schemathesis via CLI against a local API with Bearer token authentication and all checks enabled.",
+  "tool": "schemathesis",
+  "installation": "pip install schemathesis",
+  "commands": {
+    "basic": "schemathesis run https://api.example.com/openapi.json --url https://api.example.com",
+    "with_auth": "schemathesis run https://api.example.com/openapi.json --url https://api.example.com --auth-type bearer --auth $API_TOKEN",
+    "with_checks": "schemathesis run openapi.json --url https://api.example.com --checks all --workers 4",
+    "filtered": "schemathesis run openapi.json --url https://api.example.com --endpoint /users --method GET,POST",
+    "stateful": "schemathesis run openapi.json --url https://api.example.com --stateful links",
+    "junit_output": "schemathesis run openapi.json --url https://api.example.com --junit-xml results.xml"
+  },
+  "github_action": {
+    "name": "API Schema Tests",
+    "on": "push",
+    "jobs": {
+      "schemathesis": {
+        "runs-on": "ubuntu-latest",
+        "steps": [
+          { "uses": "actions/checkout@v3" },
+          {
+            "uses": "schemathesis/action@v2",
+            "with": {
+              "schema": "openapi.json",
+              "url": "https://staging.api.example.com",
+              "token": "${{ secrets.API_TOKEN }}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "sample_output": {
+    "summary": {
+      "passed": 47,
+      "failed": 3,
+      "errored": 0,
+      "total": 50
+    },
+    "failures": [
+      {
+        "operation": "POST /users",
+        "check": "response_schema_conformance",
+        "status_code": 201,
+        "message": "Response body does not conform to schema for status 201: 'email' is a required property",
+        "curl": "curl -X POST https://api.example.com/users -H 'Content-Type: application/json' -d '{\"name\": null}'"
+      }
+    ]
+  }
+}

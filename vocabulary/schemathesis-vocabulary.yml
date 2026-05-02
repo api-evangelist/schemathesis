@@ -1,0 +1,133 @@
+aid: schemathesis
+name: Schemathesis
+description: >-
+  Vocabulary and taxonomy for Schemathesis property-based API testing concepts,
+  configuration options, test checks, and integration patterns.
+version: '1.0'
+created: '2026-05-02'
+modified: '2026-05-02'
+tags:
+  - API Testing
+  - Property-Based Testing
+  - Schemathesis
+
+terms:
+  - term: Schemathesis
+    definition: >-
+      An open-source property-based API testing tool that automatically
+      generates test cases from OpenAPI and GraphQL schemas using the Hypothesis
+      framework to find bugs and specification violations.
+    category: Tool
+    url: https://schemathesis.io
+
+  - term: Property-Based Testing
+    definition: >-
+      A testing methodology where test inputs are automatically generated from
+      property specifications (schemas, type constraints, value ranges) rather
+      than manually authored. Tools like Hypothesis generate hundreds or
+      thousands of inputs to find edge cases.
+    category: Testing Methodology
+    aliases:
+      - Generative Testing
+      - Fuzzing (schema-driven)
+
+  - term: Schema-Driven Fuzzing
+    definition: >-
+      A form of API fuzzing where test inputs are constrained by schema
+      definitions (type, format, enum, pattern) rather than fully random
+      mutation. Schemathesis uses schema-driven fuzzing for targeted, meaningful
+      test case generation.
+    category: Testing Methodology
+
+  - term: Hypothesis
+    definition: >-
+      A Python property-based testing library that Schemathesis uses as its
+      test generation engine. Hypothesis shrinks failing test cases to minimal
+      reproduction examples.
+    category: Dependency
+    url: https://hypothesis.readthedocs.io/
+
+  - term: Test Check
+    definition: >-
+      A validation assertion Schemathesis applies to each API response.
+      Built-in checks include not_a_server_error, status_code_conformance,
+      response_schema_conformance, content_type_conformance, and
+      response_headers_conformance.
+    category: Configuration
+
+  - term: not_a_server_error
+    definition: >-
+      A Schemathesis check that fails if the API returns a 5xx HTTP status
+      code in response to any generated test input.
+    category: Test Check
+
+  - term: response_schema_conformance
+    definition: >-
+      A Schemathesis check that validates the response body against the JSON
+      Schema declared for that operation and status code in the OpenAPI spec.
+    category: Test Check
+
+  - term: status_code_conformance
+    definition: >-
+      A Schemathesis check that fails if the response status code is not
+      declared in the OpenAPI spec for that operation.
+    category: Test Check
+
+  - term: Stateful Testing
+    definition: >-
+      A Schemathesis testing mode that follows OpenAPI Links between operations
+      to generate multi-step test scenarios, using values from earlier responses
+      as inputs for subsequent requests.
+    category: Feature
+
+  - term: OpenAPI Links
+    definition: >-
+      An OpenAPI 3.x feature that describes relationships between responses
+      and subsequent operations. Schemathesis uses these for stateful test
+      chaining in stateful=links mode.
+    category: OpenAPI Concept
+
+  - term: Worker
+    definition: >-
+      A concurrent test execution unit in Schemathesis. Multiple workers
+      run in parallel to speed up large test suites. Configured via --workers flag.
+    category: Configuration
+
+  - term: Max Examples
+    definition: >-
+      The maximum number of test cases Hypothesis generates per OpenAPI
+      operation. Default is 100. Higher values find more edge cases but
+      take longer. Configured via --hypothesis-max-examples.
+    category: Configuration
+
+  - term: Shrinking
+    definition: >-
+      The Hypothesis process of automatically minimizing a failing test case
+      to the smallest input that still triggers the failure, making bugs
+      easier to debug. Schemathesis includes curl command reproduction steps.
+    category: Feature
+
+  - term: Contract Testing
+    definition: >-
+      Testing that verifies an API implementation matches its OpenAPI or
+      GraphQL contract. Schemathesis automates contract testing by deriving
+      test assertions directly from schema declarations.
+    category: Use Case
+
+  - term: JUnit XML
+    definition: >-
+      A standard test result format compatible with CI/CD systems like Jenkins,
+      GitHub Actions, and GitLab CI. Schemathesis can export results in JUnit
+      XML format via --junit-xml flag.
+    category: Output Format
+
+categories:
+  - Tool
+  - Testing Methodology
+  - Test Check
+  - Feature
+  - Configuration
+  - Output Format
+  - Use Case
+  - OpenAPI Concept
+  - Dependency

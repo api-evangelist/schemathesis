@@ -1,0 +1,55 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "testing": "https://testing.vocabularies.dev/vocab#",
+    "schemathesis": "https://schemathesis.io/vocab#",
+
+    "APITestingTool": "testing:APITestingTool",
+    "PropertyBasedTest": "testing:PropertyBasedTest",
+    "TestCase": "testing:TestCase",
+    "TestCheck": "testing:TestCheck",
+    "TestResult": "testing:TestResult",
+    "StatefulTest": "schemathesis:StatefulTest",
+    "FuzzingTarget": "schemathesis:FuzzingTarget",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "version": "schema:version",
+    "codeRepository": "schema:codeRepository",
+    "documentation": "schema:documentation",
+    "license": "schema:license",
+    "programmingLanguage": "schema:programmingLanguage",
+    "downloadUrl": "schema:downloadUrl",
+
+    "testsSchema": {
+      "@id": "testing:testsSchema",
+      "@type": "@id"
+    },
+    "generatesFrom": {
+      "@id": "schemathesis:generatesFrom",
+      "@type": "@id"
+    },
+    "checkType": "testing:checkType",
+    "severity": "testing:severity",
+    "maxExamples": "schemathesis:maxExamples",
+    "statefulMode": "schemathesis:statefulMode",
+    "workerCount": "schemathesis:workerCount",
+
+    "SoftwareApplication": "schema:SoftwareApplication",
+    "SoftwareSourceCode": "schema:SoftwareSourceCode"
+  },
+  "@graph": [
+    {
+      "@id": "https://schemathesis.io",
+      "@type": ["SoftwareApplication", "APITestingTool"],
+      "name": "Schemathesis",
+      "description": "A property-based API testing tool that automatically generates test cases from OpenAPI and GraphQL schemas to find bugs and spec violations.",
+      "url": "https://schemathesis.io",
+      "documentation": "https://schemathesis.readthedocs.io",
+      "codeRepository": "https://github.com/schemathesis/schemathesis",
+      "programmingLanguage": "Python",
+      "downloadUrl": "https://pypi.org/project/schemathesis/"
+    }
+  ]
+}

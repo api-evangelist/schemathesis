@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemathesis.io/schema/schemathesis-config-schema.json",
+  "title": "Schemathesis Configuration",
+  "description": "JSON Schema for Schemathesis .schemathesis.yml configuration file for configuring property-based API testing.",
+  "type": "object",
+  "properties": {
+    "schema": {
+      "type": "string",
+      "description": "URL or file path to the OpenAPI or GraphQL schema to test against."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Base URL of the API being tested."
+    },
+    "workers": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 64,
+      "default": 1,
+      "description": "Number of concurrent workers for parallel test execution."
+    },
+    "max_response_time": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum allowed response time in milliseconds."
+    },
+    "checks": {
+      "type": "array",
+      "description": "List of checks to perform on responses.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "not_a_server_error",
+          "status_code_conformance",
+          "response_schema_conformance",
+          "content_type_conformance",
+          "response_headers_conformance"
+        ]
+      }
+    },
+    "auth": {
+      "type": "object",
+      "description": "Authentication configuration.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["bearer", "basic", "apikey", "oauth2"]
+        },
+        "token": {
+          "type": "string",
+          "description": "Bearer token or API key value."
+        },
+        "username": {
+          "type": "string",
+          "description": "Username for Basic authentication."
+        },
+        "password": {
+          "type": "string",
+          "description": "Password for Basic authentication."
+        },
+        "header": {
+          "type": "string",
+          "description": "Header name for API key authentication."
+        }
+      }
+    },
+    "headers": {
+      "type": "object",
+      "description": "Additional HTTP headers to include in all requests.",
+      "additionalProperties": { "type": "string" }
+    },
+    "endpoint": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ],
+      "description": "Filter test generation to specific endpoint path patterns."
+    },
+    "method": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ],
+      "description": "Filter test generation to specific HTTP methods."
+    },
+    "tag": {
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "string" } }
+      ],
+      "description": "Filter test generation to operations with specific OpenAPI tags."
+    },
+    "hypothesis_max_examples": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 100,
+      "description": "Maximum number of Hypothesis test examples to generate per operation."
+    },
+    "stateful": {
+      "type": "string",
+      "enum": ["none", "links"],
+      "default": "none",
+      "description": "Stateful testing mode. 'links' follows OpenAPI Links for multi-step workflow testing."
+    },
+    "output_sanitize": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to sanitize sensitive data in test output and reports."
+    },
+    "junit_xml": {
+      "type": "string",
+      "description": "File path for JUnit XML output."
+    }
+  }
+}
