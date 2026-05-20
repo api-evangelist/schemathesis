@@ -65,6 +65,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/schemathesis/refs/heads/main/json-ld/schemathesis-context.jsonld
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/schemathesis-io
   - type: Website
     url: https://schemathesis.io
   - type: Documentation
