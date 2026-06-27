@@ -2,13 +2,11 @@
   "repo": "schemathesis",
   "feeds": [
     {
-      "source": "https://hub.docker.com/r/schemathesis/schemathesis",
-      "feed_url": "https://hub.docker.com/r/schemathesis/schemathesis",
-      "title": "",
+      "source": "https://schemathesis.io/blog",
       "saved": 0,
-      "method": "none"
+      "error": "HTTP 404 on blog listing"
     }
   ],
-  "fetched": "2026-06-14T20:42:17Z",
+  "fetched": "2026-06-27T13:08:52Z",
   "post_count": 0
 }
