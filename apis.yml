@@ -67,6 +67,8 @@ apis:
   - url: graphql/schemathesis-graphql.md
     type: GraphQL
 common:
+- type: DomainSecurity
+  url: security/schemathesis-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/schemathesis-io
 - type: Website
