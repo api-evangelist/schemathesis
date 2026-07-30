@@ -8,7 +8,19 @@ description: >-
   server crashes, response schema violations, validation bypasses, and stateful
   bugs in multi-step workflows. Used by Netflix, SAP, Red Hat, IBM, and JetBrains.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/schemathesis.png
 tags:
 - API Testing
 - Contract Testing
