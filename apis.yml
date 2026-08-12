@@ -79,6 +79,9 @@ apis:
   - url: graphql/schemathesis-graphql.md
     type: GraphQL
 common:
+- type: License
+  name: MIT
+  url: https://github.com/schemathesis/schemathesis/blob/master/LICENSE
 - type: DomainSecurity
   url: security/schemathesis-domain-security.yml
 - type: LinkedIn
