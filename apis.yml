@@ -8,6 +8,18 @@ description: >-
   server crashes, response schema violations, validation bypasses, and stateful
   bugs in multi-step workflows. Used by Netflix, SAP, Red Hat, IBM, and JetBrains.
 type: Index
+deliveryModel:
+  model: self-hosted
+  license: MIT
+  open_source: true
+  commercial: false
+  callable_host: false
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
@@ -79,6 +91,14 @@ apis:
   - url: graphql/schemathesis-graphql.md
     type: GraphQL
 common:
+- type: IssueTracker
+  url: https://github.com/schemathesis/schemathesis/issues
+- type: SecurityPolicy
+  url: https://github.com/schemathesis/schemathesis/blob/master/SECURITY.md
+- type: CodeOfConduct
+  url: https://github.com/schemathesis/schemathesis/blob/master/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/schemathesis/schemathesis/blob/master/CONTRIBUTING.md
 - type: License
   name: MIT
   url: https://github.com/schemathesis/schemathesis/blob/master/LICENSE
