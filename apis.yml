@@ -36,6 +36,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/schemathes
 tags:
 - API Testing
 - Contract Testing
+- Developer Tools
 - Fuzzing
 - OpenAPI
 - Property-Based Testing
